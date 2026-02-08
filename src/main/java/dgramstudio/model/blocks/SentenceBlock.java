@@ -1,5 +1,6 @@
 package dgramstudio.model.blocks;
 
+import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 
 public class SentenceBlock extends SimpleBlock{
@@ -9,8 +10,8 @@ public class SentenceBlock extends SimpleBlock{
     }
 
     @Override
-    public Block createBlock() {
-        return null;
+    public Pane createBlock() {
+        return pane;
     }
 
     @Override

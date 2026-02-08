@@ -7,24 +7,12 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HelloController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <top>
-      <fx:include source="TopBorderView.fxml"/>
+      <fx:include source="TopView.fxml"/>
    </top>
    <center>
-     <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-       <content>
-         <Pane prefHeight="200.0" prefWidth="200.0">
-           <children>
-             <VBox fx:id="Body" prefHeight="200.0" prefWidth="100.0">
-               <children>
-                 <!--<Button mnemonicParsing="false" onAction="#addBlock" text="add" />-->
-               </children>
-             </VBox>
-           </children>
-         </Pane>
-       </content>
-     </ScrollPane>
+       <fx:include source="CenterView.fxml"/>
    </center>
    <left>
       <VBox prefHeight="200.0" prefWidth="94.0" BorderPane.alignment="CENTER" />
