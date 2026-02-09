@@ -1,6 +1,7 @@
 package dgramstudio.model.blocks;
 
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.util.List;
@@ -13,6 +14,10 @@ public abstract class CompoundBlock extends Block{
     public CompoundBlock(int blockNumber, BlockType type, Button buttonEvent) {
         super(blockNumber, type);
         this.buttonEvent = buttonEvent;
+    }
+
+    public CompoundBlock(int blockNumber,BlockType type){
+        super(blockNumber,type);
     }
 
     public Block getBlock(int pos){
@@ -52,8 +57,6 @@ public abstract class CompoundBlock extends Block{
 
         newButton.setFont(oldButton.getFont());
 
-
         return newButton;
     }
-
 }

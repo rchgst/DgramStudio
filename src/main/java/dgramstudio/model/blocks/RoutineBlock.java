@@ -18,4 +18,10 @@ public class RoutineBlock extends CompoundBlock{
     public void drawLines(Pane pane) {
 
     }
+
+    @Override
+    public Pane drawBlock() {
+        pane = createBlock();
+        return pane;
+    }
 }

@@ -9,6 +9,10 @@ public class ForBlock extends CompoundBlock{
         super(blockNumber, type, buttonEvent);
     }
 
+    public ForBlock(int blockNumber, BlockType type) {
+        super(blockNumber, type);
+    }
+
     @Override
     public Pane createBlock() {
         return null;
@@ -17,5 +21,11 @@ public class ForBlock extends CompoundBlock{
     @Override
     public void drawLines(Pane pane) {
 
+    }
+
+    @Override
+    public Pane drawBlock() {
+        pane = createBlock();
+        return pane;
     }
 }

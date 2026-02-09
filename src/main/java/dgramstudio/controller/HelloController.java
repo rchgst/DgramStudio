@@ -6,7 +6,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
-public class HelloController {
+public class HelloController implements Mediator{
+    @FXML private TopViewController topViewController;
+    @FXML private LeftViewController leftViewController;
+    @FXML private CenterViewController centerViewController;
 
     @FXML
     private VBox Body;
@@ -15,13 +18,18 @@ public class HelloController {
     private Button btnEvent;
 
     @FXML
-    void addBlock(ActionEvent event) {
-        Button buttonEvent = (Button) event.getSource();
-        VBox containerActual = (VBox) buttonEvent.getParent();
-        containerActual.getChildren().remove(btnEvent);
-        WhileBlock block = new WhileBlock(1, BlockType.SENTENCE,btnEvent);
-        containerActual.getChildren().add(block.createCompoundBlock());
-        containerActual.getChildren().add(btnEvent);
+    public void initialize(){
+        topViewController.setMediator(this);
+        leftViewController.setMediator(this);
+        centerViewController.setMediator(this);
     }
 
+    @Override
+    public void notify(EventType event, Object data) {
+
+        switch (event){
+            case ADD_BLOCK -> System.out.println();
+        }
+
+    }
 }

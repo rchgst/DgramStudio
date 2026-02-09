@@ -34,4 +34,11 @@ public class OutputBlock extends SimpleBlock{
 
         pane.getChildren().addAll(left,right);
     }
+
+    @Override
+    public Pane drawBlock() {
+        pane = createBlock();
+        label.setText("salida");
+        return pane;
+    }
 }

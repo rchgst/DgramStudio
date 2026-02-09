@@ -44,7 +44,7 @@ public abstract class Block {
     private void labelProperties(){
         label = new Label("hola");
         label.setPrefSize(pane.getPrefWidth(),pane.getPrefHeight());
-        label.setAlignment(Pos.CENTER);
+        label.setAlignment(Pos.TOP_CENTER);
     }
 
     public Pane createBlock() {
@@ -55,4 +55,5 @@ public abstract class Block {
     }
 
     public abstract void drawLines(Pane pane);
+    public abstract Pane drawBlock();
 }

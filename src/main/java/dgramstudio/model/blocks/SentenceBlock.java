@@ -15,7 +15,12 @@ public class SentenceBlock extends SimpleBlock{
     }
 
     @Override
-    public void drawLines(Pane pane) {
+    public void drawLines(Pane pane) {}
 
+    @Override
+    public Pane drawBlock() {
+        pane = super.createBlock();
+        label.setText("asignación");
+        return pane;
     }
 }

@@ -27,4 +27,11 @@ public class InputBlock extends SimpleBlock{
 
         pane.getChildren().add(line);
     }
+
+    @Override
+    public Pane drawBlock() {
+        pane = createBlock();
+        label.setText("entrada");
+        return pane;
+    }
 }

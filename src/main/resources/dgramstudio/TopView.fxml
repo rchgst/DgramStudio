@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<ToolBar prefHeight="24.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+<ToolBar prefHeight="24.0" prefWidth="200.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dgramstudio.controller.TopViewController">
     <items>
         <Button mnemonicParsing="false" text="Button" />
     </items>

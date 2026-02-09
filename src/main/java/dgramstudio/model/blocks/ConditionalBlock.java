@@ -12,6 +12,10 @@ public class ConditionalBlock extends CompoundBlock{
         super(blockNumber, type,buttonEvent);
     }
 
+    public ConditionalBlock(int blockNumber, BlockType type) {
+        super(blockNumber, type);
+    }
+
     @Override
     public VBox createCompoundBlock() {
         VBox vBox = super.createCompoundBlock();
@@ -49,5 +53,13 @@ public class ConditionalBlock extends CompoundBlock{
         right.endYProperty().bind(pane.heightProperty());
 
         pane.getChildren().addAll(left,right);
+    }
+
+    @Override
+    public Pane drawBlock() {
+        pane = createBlock();
+        label.setText("alternativa");
+        drawLines(pane);
+        return pane;
     }
 }
