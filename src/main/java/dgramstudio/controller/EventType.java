@@ -1,5 +1,5 @@
 package dgramstudio.controller;
 
 public enum EventType {
-    ADD_BLOCK;
+    ADD_BLOCK, SELECTED_BLOCK;
 }
