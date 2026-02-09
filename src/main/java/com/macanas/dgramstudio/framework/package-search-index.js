@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.macanas.dgramstudio","l":"dgramstudio"},{"m":"com.macanas.dgramstudio","l":"dgramstudio.controller"},{"m":"com.macanas.dgramstudio","l":"dgramstudio.model.blocks"}];updateSearchResults();
