@@ -7,7 +7,7 @@ import javafx.scene.shape.Line;
 
 public abstract class Block {
     private static int id;
-    private final int blockNumber;
+    private int blockNumber;
     private String text;
     private BlockType type;
     protected Pane pane;
@@ -21,6 +21,8 @@ public abstract class Block {
     public int getBlockNumber() {
         return blockNumber;
     }
+
+    public void setBlockNumber(int blockNumber){this.blockNumber = blockNumber;}
 
     public String getText() {
         return text;

@@ -31,7 +31,7 @@ public class LeftViewController extends EventMediator{
         SelectedBlocks.getChildren().add(sentenceBlock.drawBlock());
         SelectedBlocks.getChildren().add(conditionalBlock.drawBlock());
         SelectedBlocks.getChildren().add(whileBlock.drawBlock());
-        //SelectedBlocks.getChildren().add(forBlock.createBlock());
+        SelectedBlocks.getChildren().add(forBlock.drawBlock());
     }
 
     private void addSelectedEvent(){
@@ -44,19 +44,19 @@ public class LeftViewController extends EventMediator{
         }
     }
 
-    public void selectBlockEvent(BlockType blockType){
-        System.out.println(blockType);
+    public void selectBlockEvent(Block block){
+        mediator.notify(EventType.SELECTED_BLOCK,block);
     }
 
-    private BlockType getTypeSelected(int pos){
-        BlockType type = null;
+    private Block getTypeSelected(int pos){
+        Block type = null;
         switch (pos){
-            case 0->{type = INPUT;}
-            case 1->{type = OUTPUT;}
-            case 2->{type = SENTENCE;}
-            case 3->{type = CONDITIONAL;}
-            case 4->{type = WHILE;}
-            case 5->{type = FOR;}
+            case 0->{type = new InputBlock(0,INPUT);}
+            case 1->{type = new OutputBlock(0,OUTPUT);}
+            case 2->{type = new SentenceBlock(0,SENTENCE);}
+            case 3->{type = new ConditionalBlock(0,CONDITIONAL);}
+            case 4->{type = new WhileBlock(0,WHILE);}
+            case 5->{type = new ForBlock(0,FOR);}
         }
         return type;
     }

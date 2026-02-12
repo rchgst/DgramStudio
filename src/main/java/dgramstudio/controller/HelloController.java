@@ -10,6 +10,7 @@ public class HelloController implements Mediator{
     @FXML private TopViewController topViewController;
     @FXML private LeftViewController leftViewController;
     @FXML private CenterViewController centerViewController;
+    private Block blockSelected;
 
     @FXML
     private VBox Body;
@@ -28,7 +29,10 @@ public class HelloController implements Mediator{
     public void notify(EventType event, Object data) {
 
         switch (event){
-            case ADD_BLOCK -> System.out.println();
+            case SELECTED_BLOCK -> {blockSelected = (Block) data;}
+            case ADD_BLOCK -> {
+                centerViewController.addBlockSelected(blockSelected);
+            }
         }
 
     }

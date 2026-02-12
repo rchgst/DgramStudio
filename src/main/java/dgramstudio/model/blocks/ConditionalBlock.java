@@ -17,8 +17,8 @@ public class ConditionalBlock extends CompoundBlock{
     }
 
     @Override
-    public VBox createCompoundBlock() {
-        VBox vBox = super.createCompoundBlock();
+    public VBox createCompoundBlock(Button buttonEvent) {
+        VBox vBox = super.createCompoundBlock(buttonEvent);
         drawLines(pane);
         HBox body = new HBox();
         VBox trueBox = new VBox();

@@ -36,7 +36,7 @@ public abstract class CompoundBlock extends Block{
         bodyBlock.setStyle("-fx-border-color:black;");
     }
 
-    public VBox createCompoundBlock(){
+    public VBox createCompoundBlock(Button buttonEvent){
         VBox bodyBlock = new VBox();
         pane = createBlock();
         bodyBlock.getChildren().add(pane);

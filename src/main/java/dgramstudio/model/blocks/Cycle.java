@@ -16,8 +16,8 @@ public abstract class Cycle extends CompoundBlock{
     }
 
     @Override
-    public VBox createCompoundBlock() {
-        VBox box = super.createCompoundBlock();
+    public VBox createCompoundBlock(Button buttonEvent) {
+        VBox box = super.createCompoundBlock(buttonEvent);
         VBox body = new VBox();
         body.getChildren().add(cloneButton(buttonEvent));
         box.getChildren().add(body);
