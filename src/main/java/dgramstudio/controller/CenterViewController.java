@@ -34,17 +34,7 @@ public class CenterViewController extends EventMediator{
     }
 
     private Node blockSelected(Block block,Button btnEvent){
-        Node node = null;
-        switch (block.getType()){
-            case INPUT -> node = ((InputBlock)block).createBlock();
-            case OUTPUT -> node = ((OutputBlock)block).createBlock();
-            case SENTENCE -> node = ((SentenceBlock)block).createBlock();
-            case CONDITIONAL -> {
-                node = ((ConditionalBlock)block).createCompoundBlock(btnEvent);
-            }
-            case WHILE -> node = ((WhileBlock)block).createCompoundBlock(btnEvent);
-            case FOR -> node = ((ForBlock)block).createCompoundBlock(btnEvent);
-        }
+        Node node = block instanceof CompoundBlock ? ((CompoundBlock)block).createCompoundBlock(btnEvent):((SimpleBlock)block).createBlock();
         return node;
     }
 

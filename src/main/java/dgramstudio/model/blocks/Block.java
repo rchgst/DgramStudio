@@ -34,7 +34,6 @@ public abstract class Block {
 
     public BlockType getType() {
         return type;
-
     }
 
     private void paneProperties(){

@@ -11,6 +11,7 @@ public class SentenceBlock extends SimpleBlock{
 
     @Override
     public Pane createBlock() {
+        pane = super.createBlock();
         return pane;
     }
 
