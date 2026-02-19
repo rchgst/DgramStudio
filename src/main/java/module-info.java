@@ -1,9 +1,10 @@
-module com.macanas.dgramstudio {
+module dgramstudio {
     requires javafx.controls;
     requires javafx.fxml;
 
     requires org.controlsfx.controls;
     requires org.kordamp.ikonli.javafx;
+    requires java.desktop;
 
     opens dgramstudio to javafx.fxml;
     exports dgramstudio;

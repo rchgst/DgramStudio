@@ -1,6 +1,9 @@
 package dgramstudio.controller;
 
 import dgramstudio.model.blocks.*;
+import dgramstudio.view.blocks.BlockView;
+import dgramstudio.view.blocks.CompoundBlockView;
+import dgramstudio.view.blocks.SimpleBlockView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -25,16 +28,14 @@ public class CenterViewController extends EventMediator{
         mediator.notify(EventType.ADD_BLOCK,buttonEventActual);
     }
 
-    public void addBlockSelected(Block block){
-        blockNumber++;
-        block.setBlockNumber(blockNumber);
+    public void addBlockSelected(BlockView block){
         containerActual.getChildren().remove(buttonEventActual);
         containerActual.getChildren().add(blockSelected(block,buttonEventActual));
         containerActual.getChildren().add(buttonEventActual);
     }
 
-    private Node blockSelected(Block block,Button btnEvent){
-        Node node = block instanceof CompoundBlock ? ((CompoundBlock)block).createCompoundBlock(btnEvent):((SimpleBlock)block).createBlock();
+    private Node blockSelected(BlockView block, Button btnEvent){
+        Node node = block instanceof CompoundBlockView ? ((CompoundBlockView)block).createCompoundBlock(btnEvent):((SimpleBlockView)block).createBlock();
         return node;
     }
 

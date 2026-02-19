@@ -1,6 +1,6 @@
 package dgramstudio.controller;
 
-import dgramstudio.model.blocks.*;
+import dgramstudio.view.blocks.*;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -19,12 +19,12 @@ public class LeftViewController extends EventMediator{
     }
 
     private void createSelectedBlocks(){
-        InputBlock inputBlock = new InputBlock(0,INPUT);
-        OutputBlock outputBlock = new OutputBlock(1,OUTPUT);
-        SentenceBlock sentenceBlock = new SentenceBlock(2,SENTENCE);
-        ConditionalBlock conditionalBlock = new ConditionalBlock(3,CONDITIONAL);
-        WhileBlock whileBlock = new WhileBlock(4,WHILE);
-        ForBlock forBlock = new ForBlock(5,FOR);
+        InputBlockView inputBlock = new InputBlockView(INPUT);
+        OutputBlockView outputBlock = new OutputBlockView(OUTPUT);
+        SentenceBlockView sentenceBlock = new SentenceBlockView(SENTENCE);
+        ConditionalBlockView conditionalBlock = new ConditionalBlockView(CONDITIONAL);
+        WhileBlockView whileBlock = new WhileBlockView(WHILE);
+        ForBlockView forBlock = new ForBlockView(FOR);
 
         SelectedBlocks.getChildren().add(inputBlock.drawBlock());
         SelectedBlocks.getChildren().add(outputBlock.drawBlock());
@@ -44,19 +44,19 @@ public class LeftViewController extends EventMediator{
         }
     }
 
-    public void selectBlockEvent(Block block){
+    public void selectBlockEvent(BlockView block){
         mediator.notify(EventType.SELECTED_BLOCK,block);
     }
 
-    private Block getTypeSelected(int pos){
-        Block type = null;
+    private BlockView getTypeSelected(int pos){
+        BlockView type = null;
         switch (pos){
-            case 0->{type = new InputBlock(0,INPUT);}
-            case 1->{type = new OutputBlock(0,OUTPUT);}
-            case 2->{type = new SentenceBlock(0,SENTENCE);}
-            case 3->{type = new ConditionalBlock(0,CONDITIONAL);}
-            case 4->{type = new WhileBlock(0,WHILE);}
-            case 5->{type = new ForBlock(0,FOR);}
+            case 0->{type = new InputBlockView(INPUT);}
+            case 1->{type = new OutputBlockView(OUTPUT);}
+            case 2->{type = new SentenceBlockView(SENTENCE);}
+            case 3->{type = new ConditionalBlockView(CONDITIONAL);}
+            case 4->{type = new WhileBlockView(WHILE);}
+            case 5->{type = new ForBlockView(FOR);}
         }
         return type;
     }

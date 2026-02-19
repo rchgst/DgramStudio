@@ -1,18 +1,19 @@
-package dgramstudio.model.blocks;
+package dgramstudio.view.blocks;
 
+import dgramstudio.model.blocks.BlockType;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 
-public abstract class Cycle extends CompoundBlock{
+public abstract class CycleView extends CompoundBlockView {
 
-    public Cycle(int blockNumber, BlockType type, Button buttonEvent) {
-        super(blockNumber, type, buttonEvent);
+    public CycleView(BlockType type, Button buttonEvent) {
+        super(type, buttonEvent);
     }
 
-    public Cycle(int blockNumber, BlockType type) {
-        super(blockNumber, type);
+    public CycleView(BlockType type) {
+        super(type);
     }
 
     @Override
